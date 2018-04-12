@@ -1,6 +1,6 @@
 let eachcard_title = document.querySelectorAll(".title"),
   icons = document.querySelectorAll(".weather_icon"),
-  temps = document.querySelectorAll(".desc"),
+  temp_max = document.querySelectorAll(".temp_max"),
   allcards = document.querySelectorAll(".card");
 
 function getForecast(obj) {
@@ -36,8 +36,7 @@ function populateCards(obj) {
     let i = 0, max = -50, chosen;
       for (let item in obj) {
         if (i<=Object.keys(obj).length) {
-          allcards[i].style.background = "#2b2727";
-          console.log(i);
+          allcards[i].style.background = "#2b2626";
           if (obj[item]["temp_max"] > max) {
             max = obj[item]["temp_max"]
             chosen = allcards[i]
@@ -47,14 +46,10 @@ function populateCards(obj) {
           eachcard_title[i].style.color = "white";
           icons[i].src = "http://openweathermap.org/img/w/" + obj[item]["icon"] + ".png"
           icons[i].title = obj[item]["description"]
-          temps[i].textContent = "Max temperature: " + obj[item]["temp_max"] + "°F"
+          temp_max[i].textContent = "Average °F: " + obj[item]["temp_max"] + "°F"
           i++;
 
         }
       }
-
-
-    console.log(max);
-    console.log(chosen);
     chosen.style.background = "#00C851";
 }

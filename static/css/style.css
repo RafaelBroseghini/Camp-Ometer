@@ -33,8 +33,13 @@ label {
     font-weight: bold;
 }
 
-.desc {
+.temp_max {
     color: white;
+    font-size: 1.5em;
+}
+
+.temp_min {
+  font-size: 1.5em;
 }
 
 .item {
