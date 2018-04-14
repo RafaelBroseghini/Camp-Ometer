@@ -20,6 +20,9 @@ function fiveDayWeather(lst) {
             five_days[day_dt_txt[0]]["icon"] = day.weather[0]["icon"]
             five_days[day_dt_txt[0]]["description"] = day.weather[0]["description"]
         }
+        else {
+          five_days[day_dt_txt[0]]["temp_max"] += day.main["temp_max"];
+        }
     }
     displayCards();
     populateCards(five_days)
@@ -46,7 +49,7 @@ function populateCards(obj) {
           eachcard_title[i].style.color = "white";
           icons[i].src = "http://openweathermap.org/img/w/" + obj[item]["icon"] + ".png"
           icons[i].title = obj[item]["description"]
-          temp_max[i].textContent = "Average °F: " + obj[item]["temp_max"] + "°F"
+          temp_max[i].textContent = "Average °F: " + (obj[item]["temp_max"]/8).toFixed(2) + "°F"
           i++;
 
         }
