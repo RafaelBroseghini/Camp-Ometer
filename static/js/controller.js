@@ -19,12 +19,13 @@ function clickedOn() {
             let park_name = park.name
               , long_lat = park.latLong
               , description = park.description
-              , url = park.url;
+              , url = park.url
+              , designation = park.designation;
             if (long_lat !== "" && park_name !== "") {
                 let camp = park.latLong.split(":")
                 let long = camp[1].split(",")[0];
                 let lat = camp[2].split("}")[0];
-                all_parks.push([park_name, long, lat, description, url])
+                all_parks.push([park_name, long, lat, description, url, designation])
             }
         }
         return all_parks
