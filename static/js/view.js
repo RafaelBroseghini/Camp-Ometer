@@ -25,7 +25,7 @@ class View {
     eachcard_title[i].textContent = split_date[1] + "/" + split_date[2]
     eachcard_title[i].style.color = "white";
     icons[i].src = "http://openweathermap.org/img/w/" + day["icon"] + ".png"
-    icons[i].title = day["description"]
+    icons[i].title = day["description"].charAt(0).toUpperCase() + day["description"].slice(1);
     temp_max[i].textContent = "Average °F: " + (day["temp_max"]) + "°F"
   }
 
