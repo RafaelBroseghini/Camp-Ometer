@@ -1,9 +1,5 @@
 class View {
   constructor(model) {
-    //Subscribe to shoppingCart model passing redrawTable.
-    //Every time that a change is made to the model
-    //the view calls functions in models handlers, which in
-    //this case redraws the table.
     model.subscribe(this.populateCards.bind(this))
   }
 
