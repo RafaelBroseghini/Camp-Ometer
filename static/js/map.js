@@ -55,10 +55,9 @@ function plotMarkers(m) {
                 })
                 infowindow.open(map, newMarker);
                 let parser = new DOMParser();
-                console.log(infowindow.content);
                 let doc = parser.parseFromString(infowindow.content, "application/xml");
                 let park_from_map = doc.querySelector("#park_map").textContent
-                setTitle(park_from_map)
+                view.setBlankSpaceTitle(park_from_map)
                 let coord = JSON.parse(doc.getElementById("coord").textContent)
                 getForecast(coord);
             }
