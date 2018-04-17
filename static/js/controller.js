@@ -34,16 +34,11 @@ function clickedOn() {
 
 function fiveDayWeather(lst) {
     fiveDays.deleteAllDays();
-    let five_days = {};
     for (let day of lst) {
         let day_dt_txt = day.dt_txt.split(" ")[0]
-        if (!(day_dt_txt in five_days)) {
-          five_days[day_dt_txt] = 0;
+        let a_day = new Day(day_dt_txt, day.main["temp_max"],
+        day.weather[0]["icon"], day.weather[0]["description"])
+        fiveDays.addDay(a_day);
 
-          let a_day = new Day(day_dt_txt, day.main["temp_max"],
-          day.weather[0]["icon"], day.weather[0]["description"])
-
-          fiveDays.addDay(a_day);
-        }
-    }
-}
+      }
+  }

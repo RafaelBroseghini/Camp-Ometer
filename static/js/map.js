@@ -61,8 +61,12 @@ function plotMarkers(m) {
                 let doc = parser.parseFromString(infowindow.content, "application/xml");
                 let park_from_map = doc.querySelector("#park_map").textContent
                 view.setBlankSpaceTitle(park_from_map)
-                let coord = JSON.parse(doc.getElementById("coord").textContent)
-                getForecast(coord);
+                try {
+                  let coord = JSON.parse(doc.getElementById("coord").textContent)
+                  getForecast(coord);
+                } catch (error) {
+                  alert("Could not retrieve Weather Data for chosen location.");
+                }
             }
             ;
         }

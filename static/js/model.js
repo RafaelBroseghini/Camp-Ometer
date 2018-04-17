@@ -34,8 +34,24 @@ class FiveDays extends Subject {
     super()
     this.items = [];
   }
+
   addDay(it) {
-    this.items.push(it)
+    if (this.items.length == 0) {
+      console.log("First:", it.date);
+      this.items.push(it)
+    }
+    let notFound = true;
+    for (let day = 0; day < this.items.length; day++) {
+      if (it.date == this.items[day].date) {
+        console.log("Updating existing: ", it.date);
+        notFound = false;
+        this.items[day].temp_max += it.temp_max
+      }
+    }
+    if (notFound) {
+      console.log("New: ", it.date);
+      this.items.push(it)
+    }
     this.publish("Added Day: " + it.date, this)
   }
 
