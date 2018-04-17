@@ -2,12 +2,12 @@ let i = 0;
 let p = 0;
 
 setInterval(function() {
-  let images = ['park2.jpg','park3.jpg','park4.jpg']
+  let images = ['park2.jpg','park4.jpg',"park.jpg", "park5.jpg"]
       document.body.style.backgroundImage = "url(../static/img/" + images[i] + ")";
       i += 1;
       if (i > images.length) {
         i =  0;
-        document.body.style.backgroundImage = "url(../static/img/park.jpg)";
+        document.body.style.backgroundImage = "url(../static/img/park3.jpg)";
       }
 }, 10000);
 
