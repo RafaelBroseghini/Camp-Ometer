@@ -24,7 +24,7 @@ function initMap() {
             lng: -100
         },
         zoom: 3,
-        mapTypeId: 'satellite'
+        mapTypeId: google.maps.MapTypeId.HYBRID
     });
 }
 
