@@ -1,4 +1,6 @@
 let i = 0;
+let p = 0;
+
 setInterval(function() {
   let images = ['park2.jpg','park3.jpg','park4.jpg']
       document.body.style.backgroundImage = "url(../static/img/" + images[i] + ")";
@@ -8,3 +10,14 @@ setInterval(function() {
         document.body.style.backgroundImage = "url(../static/img/park.jpg)";
       }
 }, 10000);
+
+function changeName(){
+  let the_name = document.querySelector("#natp");
+  let pn = ["National Historic Site!", "National Monument!"];
+  the_name.textContent = pn[p];
+  p++;
+  if (p > pn.length) {
+    p = 0;
+    the_name.textContent = "National Park!"
+  }
+}

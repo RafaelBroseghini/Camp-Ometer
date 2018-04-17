@@ -64,3 +64,8 @@ label {
     border-radius: 2%;
     box-shadow: 5px 5px grey;
 }
+
+#natp {
+  color: #ffff00;
+  font-size: 2em;
+}
