@@ -1,13 +1,19 @@
 # Park-Ometer :tent:
 
->Web application that uses the Google maps APIs along with openweathermap API to
+* Web application that uses the Google maps APIs along with OpenWeatherMap API to
 display the forecast for the next five days at/around a National Park of the user's choice.
+* **If you like camping and things related to it, see my other app [Yelp-Camp](https://github.com/RafaelBroseghini/Yelp-Camp/)**
 
-## Installation
-* *From the command line:*
+## Usage
   * `git clone git@github.com:RafaelBroseghini/Park-Ometer.git`
   * `cd Park-Ometer`
   * `python3 parkOmeter.py`
+  
+## Features
+ * [Google Maps API](https://cloud.google.com/maps-platform/)
+ * [OpenWeatherMap API](https://openweathermap.org/api)
+ * [National Parks API](https://www.nps.gov/subjects/digital/nps-data-api.htm)
+ * AJAX
 
 ## Contributing
 
